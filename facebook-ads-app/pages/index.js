@@ -1,8 +1,8 @@
-import { Heading, Page } from "@shopify/polaris";
+import { Heading, Page, TextStyle } from "@shopify/polaris";
 
 const Index = () => (
   <Page>
-    <Heading>Shopify app with Node and React 🎉</Heading>
+    <TextStyle>Facebook Ads Optimiser</TextStyle>
   </Page>
 );
 
