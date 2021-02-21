@@ -1,5 +1,6 @@
-import { Card, Layout, Page, Heading, Spinner } from "@shopify/polaris";
+import { Card, Layout, Page, Heading, Spinner, Button } from "@shopify/polaris";
 import React from "react";
+import ReactDOM from "react-dom";
 import { generateCreative, newAdCopy } from "../server/creatives";
 import styles from "./pagestyles.css";
 
@@ -9,7 +10,7 @@ class Creative extends React.Component {
       <Page>
         <div className="main-container">
           <Heading>Creative</Heading>
-          <label for="catagories">Store catagory</label>
+          <label htmlFor="catagories">Store catagory</label>
           <select name="catagories" id="select_id" onChange={generateCreative}>
             <option value="Womens-Fashion">Womens Fashion</option>
             <option value="Technology">Technology</option>
@@ -17,7 +18,7 @@ class Creative extends React.Component {
             <option value="Toys">Toys</option>
           </select>
           <p id="creative-text"></p>
-          <button onClick={newAdCopy}>Generate</button>
+          <Button onClick={newAdCopy}>Generate</Button>
 
           <div className="ad-mockup">
             <p id="primarytext"></p>

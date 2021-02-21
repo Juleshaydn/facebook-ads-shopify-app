@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider, Loading } from "@shopify/app-bridge-react";
+import { Provider, Loading, Spinner } from "@shopify/app-bridge-react";
 
 function MyApp() {
   const config = { apiKey: "12345", shopOrigin: shopOrigin };
@@ -8,7 +8,14 @@ function MyApp() {
   const loading = isTheAppLoading();
   const loadingComponent = loading ? <Loading /> : null;
 
-  return <Provider config={config}>{loadingComponent}</Provider>;
+  return (
+    <Provider config={config}>
+      {loadingComponent}
+      <Frame>
+        <Loading />
+      </Frame>
+    </Provider>
+  );
 }
 
 const root = document.createElement("div");

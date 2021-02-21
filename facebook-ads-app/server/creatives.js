@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import $ from "jQuery";
+import $ from "jquery";
 
 function generateCreative() {
   $("#select_id").change(function () {
