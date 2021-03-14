@@ -47,6 +47,7 @@ app.prepare().then(() => {
           shop,
           returnUrl
         );
+
         ctx.redirect(subscriptionUrl);
       },
     })

@@ -5,22 +5,24 @@ import {
   Heading,
   TextStyle,
   Button,
+  Spinner,
+  Frame,
+  Loading,
 } from "@shopify/polaris";
 import React from "react";
 import styles from "./pagestyles.css";
 import { populateFields, targetCalculator } from "../server/population";
 import { Upload } from "../server/upload";
-
 class Correlation extends React.Component {
   render() {
     return (
-      <>
-        <div className="average-order-style">
+      <Page title="Correlation">
+        <div className="card2">
           <Heading>Average Order Value</Heading>
           <tb id="average-order-value" type="number"></tb>
         </div>
         <div className="table_overviews">
-          <div className="table_style">
+          <div className="card2">
             <table id="table1">
               <tbody>
                 <tr>
@@ -61,7 +63,7 @@ class Correlation extends React.Component {
             </table>
           </div>
 
-          <div className="table_style">
+          <div className="card2">
             <table id="conversion_rate_overview">
               <tbody>
                 <tr>
@@ -112,7 +114,7 @@ class Correlation extends React.Component {
             </table>
           </div>
 
-          <div className="table_style">
+          <div className="card2">
             <table id="target_calculator">
               <tbody>
                 <tr>
@@ -130,7 +132,7 @@ class Correlation extends React.Component {
                         type="number"
                         placeholder="4"
                       ></input>
-                      <Button onClick={targetCalculator}>Calculate</Button>
+                      <button onClick={targetCalculator}>Calculate</button>
                     </td>
                   </tr>
                   <tr>
@@ -158,26 +160,26 @@ class Correlation extends React.Component {
                 <Heading>Facebook Data</Heading>
                 <script src="/CSV_upload.js" type="text/javascript"></script>
                 <input type="file" id="fileUpload" />
-                <Button
+                <button
                   type="button"
                   id="upload"
                   value="Upload"
                   onClick={Upload}
                 >
                   Upload
-                </Button>
-                <Button
+                </button>
+                <button
                   className="populate_correlation"
                   onClick={populateFields}
                 >
                   Go
-                </Button>
+                </button>
                 <div id="dvCSV"></div>
               </tbody>
             </table>
           </div>
         </div>
-      </>
+      </Page>
     );
   }
 }

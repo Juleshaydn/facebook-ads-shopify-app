@@ -4,9 +4,7 @@ import {
   Page,
   Heading,
   TextStyle,
-  Button,
   Frame,
-  Loading,
 } from "@shopify/polaris";
 import React, { useState } from "react";
 import styles from "./pagestyles.css";
@@ -17,13 +15,11 @@ import {
   roasDown,
   roasUp,
 } from "../server/roas-forecast";
-import { printType } from "graphql";
 
 class Forecast extends React.Component {
   render() {
     return (
-      <Page>
-        <Heading>ROAS Forecast</Heading>
+      <Page title="Roas Forecast">
         <div id="fullscreen">
           <div className="container">
             <div className="cost-inputs">
@@ -60,20 +56,20 @@ class Forecast extends React.Component {
               <TextStyle>Other costs (£)</TextStyle>
               <input type="number" placeholder="80.00" id="other-fee"></input>
 
-              <Button onClick={populateRoas}>Go!</Button>
+              <button onClick={populateRoas}>Go!</button>
             </div>
           </div>
           <div>
             <div className="roas-forcast">
               <table className="roas-numbers">
-                <Button onClick={roasDown}>⬅</Button>
+                <button onClick={roasDown}>⬅</button>
                 <th>
                   <TextStyle>Cost</TextStyle>
                   <tr>
-                    <Button onClick={spendUp}>⬆</Button>
+                    <button onClick={spendUp}>⬆</button>
                   </tr>
                   <tr>
-                    <Button onClick={spendDown}>⬇</Button>
+                    <button onClick={spendDown}>⬇</button>
                   </tr>
                 </th>
                 <th>
@@ -146,7 +142,7 @@ class Forecast extends React.Component {
                   </div>
                 </th>
                 <th>
-                  <p id="roas-7">1.5</p>
+                  <p id="roas-7">1.6</p>
                   <div className="cost-values">
                     <p id="g1">0</p>
                     <p id="g2">0</p>
@@ -205,7 +201,7 @@ class Forecast extends React.Component {
                     <p id="l5">0</p>
                   </div>
                 </th>
-                <Button onClick={roasUp}>➡</Button>
+                <button onClick={roasUp}>➡</button>
               </table>
             </div>
           </div>

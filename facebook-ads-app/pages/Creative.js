@@ -7,9 +7,8 @@ import styles from "./pagestyles.css";
 class Creative extends React.Component {
   render() {
     return (
-      <Page>
+      <Page title="Ad Copy">
         <div className="main-container">
-          <Heading>Creative</Heading>
           <label htmlFor="catagories">Store catagory</label>
           <select name="catagories" id="select_id" onChange={generateCreative}>
             <option value="Womens-Fashion">Womens Fashion</option>
@@ -18,9 +17,8 @@ class Creative extends React.Component {
             <option value="Toys">Toys</option>
           </select>
           <p id="creative-text"></p>
-          <Button onClick={newAdCopy}>Generate</Button>
-
-          <div className="ad-mockup">
+          <button onClick={newAdCopy}>Generate</button>
+          <div className="card2">
             <p id="primarytext"></p>
             <p id="headline"></p>
             <p id="description"></p>

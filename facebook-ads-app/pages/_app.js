@@ -2,32 +2,37 @@ import fetch from "node-fetch";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import App from "next/app";
-import { AppProvider } from "@shopify/polaris";
+import { AppProvider, Frame } from "@shopify/polaris";
 import "@shopify/polaris/dist/styles.css";
 import translations from "@shopify/polaris/locales/en.json";
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider, Loading } from "@shopify/app-bridge-react";
-
-const client = new ApolloClient({
-  fetch: fetch,
-  fetchOptions: {
-    credentials: "include",
-  },
-});
+import { useRoutes } from "react-router-dom";
+import { Provider } from "@shopify/app-bridge-react";
+import { EnvironmentContext } from "twilio/lib/rest/serverless/v1/service/environment";
 
 class MyApp extends App {
+  isTheAppLoading() {
+    return true;
+  }
   render() {
     const { Component, pageProps, shopOrigin } = this.props;
+    const loading = this.isTheAppLoading();
+    const config = {
+      apiKey: API_KEY,
+      shopOrigin: shopOrigin,
+      forceRedirect: true,
+    };
+    const client = new ApolloClient({
+      fetch: fetch,
+      fetchOptions: {
+        credentials: "include",
+      },
+    });
+
     return (
       <AppProvider i18n={translations}>
-        <Provider
-          config={{
-            apiKey: API_KEY,
-            shopOrigin: shopOrigin,
-            forceRedirect: true,
-          }}
-        >
+        <Provider config={config}>
           <ApolloProvider client={client}>
             <Component {...pageProps} />
           </ApolloProvider>
