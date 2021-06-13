@@ -9,8 +9,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { useRoutes } from "react-router-dom";
 import { Provider } from "@shopify/app-bridge-react";
-import { EnvironmentContext } from "twilio/lib/rest/serverless/v1/service/environment";
-
 class MyApp extends App {
   render() {
     const { Component, pageProps, shopOrigin } = this.props;
