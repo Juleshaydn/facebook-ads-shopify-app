@@ -16,7 +16,7 @@ import {
   roasUp,
 } from "../server/roas-forecast";
 
-class Forecast extends React.Component {
+class ROAS_Forecast extends React.Component {
   render() {
     return (
       <Page title="Roas Forecast">
@@ -211,4 +211,4 @@ class Forecast extends React.Component {
   }
 }
 
-export default Forecast;
+export default ROAS_Forecast;

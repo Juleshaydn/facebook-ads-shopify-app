@@ -158,7 +158,7 @@ function populateFields() {
   var Aov = purchasesConversionValue / purchases;
   var AovVal = "£" + Aov.toFixed(2);
   var table1 = document.getElementById("table1");
-  ReactDOM.render(AovVal, document.getElementById("average-order-value"));
+  ReactDOM.render(AovVal, document.getElementById("average-order-value-C"));
 
   //====================================
   //    CORRELATIONS START

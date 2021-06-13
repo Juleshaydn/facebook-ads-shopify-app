@@ -2,30 +2,41 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 function populateRoas() {
-  var other_fee = document.getElementById("other-fee").value;
-  var other_fee_val = parseFloat(other_fee, 10);
+  var average_order_value = document.getElementById("average-order-value")
+    .value;
+  var average_order_value_val = parseFloat(average_order_value, 10);
+
+  console.log(average_order_value_val);
 
   var credit_card_fee = document.getElementById("credit-card-fee").value;
   var credit_card_fee_val = parseFloat(credit_card_fee, 10);
 
+  console.log(credit_card_fee_val);
+
   var merchant_fee = document.getElementById("merchant-fee").value;
   var merchant_fee_val = parseFloat(merchant_fee, 10);
+
+  console.log(merchant_fee_val);
 
   var shipping_fee = document.getElementById("shipping-fee").value;
   var shipping_fee_val = parseFloat(shipping_fee, 10);
 
+  console.log(shipping_fee_val);
+
   var fulfilment_fee = document.getElementById("fulfilment-fee").value;
   var fulfilment_fee_val = parseFloat(fulfilment_fee, 10);
+
+  console.log(fulfilment_fee_val);
 
   var product_fee = document.getElementById("product-fee").value;
   var product_fee_val = parseFloat(product_fee, 10);
 
+  console.log(product_fee_val);
+
   var other_fee = document.getElementById("other-fee").value;
   var other_fee_val = parseFloat(other_fee, 10);
 
-  var average_order_value = document.getElementById("average-order-value")
-    .value;
-  var average_order_value_val = parseFloat(average_order_value, 10);
+  console.log(other_fee_val);
 
   var total =
     shipping_fee_val + fulfilment_fee_val + product_fee_val + other_fee_val;
@@ -56,7 +67,7 @@ function populateRoas() {
 function spendUp() {
   for (var i = 1; i != 6; i++) {
     var spend = document.getElementById("spend-" + i).innerHTML;
-    var spendVal = parseInt(spend, 10);
+    var spendVal = parseFloat(spend, 10);
     document.getElementById("spend-" + i).innerHTML = spendVal + 50;
   }
   populateRoas.call();
@@ -65,7 +76,7 @@ function spendUp() {
 function spendDown() {
   for (var i = 1; i != 6; i++) {
     var spend = document.getElementById("spend-" + i).innerHTML;
-    var spendVal = parseInt(spend, 10);
+    var spendVal = parseFloat(spend, 10);
     document.getElementById("spend-" + i).innerHTML = spendVal - 50;
   }
   populateRoas.call();

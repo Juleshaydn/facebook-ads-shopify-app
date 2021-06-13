@@ -3,6 +3,7 @@ import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import { Card, Loading } from "@shopify/polaris";
 import styles from "./pagestyles.css";
+
 const GET_SHOP_DATA = gql`
   query Shop {
     shop {

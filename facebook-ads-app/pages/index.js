@@ -20,12 +20,9 @@ import {
   Toast,
   TopBar,
 } from "@shopify/polaris";
-import Creative from "./Creative";
 import ShopData from "./ShopData";
 import Correlation from "./Correlation";
 import ROAS_Forecast from "./ROAS_Forecast";
-import Dashboard from "./Dashboard";
-import routes from "./routes";
 import {
   IqMajor,
   SocialAdMajor,
@@ -181,35 +178,13 @@ export default function FrameExample() {
         items={[
           {
             label: "Dashboard",
-            icon: ProfileMajor,
-            onClick: toggleIsLoading,
-          },
-          {
-            label: "Correlation",
             icon: IqMajor,
             onClick: toggleIsLoading,
-          },
-          {
-            label: "Road_forcast",
-            icon: PopularMajor,
-            onClick: toggleIsLoading,
-          },
-          {
-            label: "Creative",
-            icon: SocialAdMajor,
-            onclick: toggleIsLoading,
           },
         ]}
       />
     </Navigation>
   );
-
-  const routes = [
-    { path: "dashboard", element: <Dashboard /> },
-    { path: "correlation", element: <Correlation /> },
-    { path: "road_forcast", element: <ROAS_Forecast /> },
-    { path: "creative", element: <Creative /> },
-  ];
 
   const loadingMarkup = isLoading ? <Loading /> : null;
 
@@ -232,7 +207,14 @@ export default function FrameExample() {
     </SkeletonPage>
   );
 
-  const pageMarkup = isLoading ? loadingPageMarkup : routes[2].element;
+  const allPages = (
+    <Layout>
+      <Correlation />
+      <ROAS_Forecast />
+    </Layout>
+  );
+
+  const pageMarkup = isLoading ? loadingPageMarkup : allPages;
 
   const modalMarkup = (
     <Modal
@@ -264,9 +246,8 @@ export default function FrameExample() {
 
   const theme = {
     logo: {
-      width: 50,
-      topBarSource:
-        "https://1000logos.net/wp-content/uploads/2016/11/Facebook-logo.png",
+      width: 120,
+      topBarSource: "https://i.ibb.co/D1j9V7T/adeaselogo.png",
       contextualSaveBarSource: "",
       url: "",
       accessibilityLabel: "",

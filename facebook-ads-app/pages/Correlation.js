@@ -19,20 +19,14 @@ class Correlation extends React.Component {
       <Page title="Correlation">
         <div className="card2">
           <Heading>Average Order Value</Heading>
-          <tb id="average-order-value" type="number"></tb>
+          <tb id="average-order-value-C" type="number"></tb>
         </div>
         <div className="table_overviews">
           <div className="card2">
             <table id="table1">
               <tbody>
                 <tr>
-                  <Heading className="s0">Correlations</Heading>
-                  <td className="s0" dir="ltr">
-                    CPA
-                  </td>
-                  <td className="s0" dir="ltr">
-                    ROAS
-                  </td>
+                  <Heading className="s0">ROAS Correlations</Heading>
                 </tr>
 
                 <div className="correlations_overview_results">

@@ -12,12 +12,8 @@ import { Provider } from "@shopify/app-bridge-react";
 import { EnvironmentContext } from "twilio/lib/rest/serverless/v1/service/environment";
 
 class MyApp extends App {
-  isTheAppLoading() {
-    return true;
-  }
   render() {
     const { Component, pageProps, shopOrigin } = this.props;
-    const loading = this.isTheAppLoading();
     const config = {
       apiKey: API_KEY,
       shopOrigin: shopOrigin,
